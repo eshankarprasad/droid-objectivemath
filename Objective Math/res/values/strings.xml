@@ -1,0 +1,73 @@
+<resources>
+
+    <string name="app_name">Objective Math</string>
+    <string name="default_text">Default label</string>
+    <string name="default_number">11</string>
+    <string name="default_operator">x</string>
+    <string name="menu_settings">12</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="button_start_label">Start</string>
+    <string name="textview_start_label">Funny Arithmetic!</string>
+    <string name="label_spiner_difficulty">Select difficulty</string>
+    <string name="label_spiner_total_problems">No. of problems</string>
+    <string name="label_spiner_timer">Timer value</string>
+    
+    <string name="serial_number">Sr. no.</string>
+    <string name="button_score_card">Score Card</string>
+    <string name="alert_title_score">Score : %1$s %</string>
+    <string name="alert_title_alert">Alert</string>
+    <string name="alert_button_ok">OK</string>
+    <string name="label_message_going_for_next_expression">Going for next expression!</string>
+    <string name="label_message_time_remaining">Time remaining:</string>
+    <string name="alert_message_timeup">Time up!</string>
+    <string name="label_wrong_answer">Wrong answer!\n %1$s is right answer</string>
+    <string name="label_correct_answer">Correct answer!</string>
+    <string name="alert_message_score">Total Problems : %2$s \nAttempted : %1$s \nCorrect : %3$s \nWrong : %4$s</string>
+    
+    <string name="button_addition_label">Addition</string>
+    <string name="button_subtraction_label">Subtraction</string>
+    <string name="button_multiplication_label">Multiplication</string>
+    <string name="button_division_label">Division</string>
+	
+	<string name="item_easy">Easy</string>
+	<string name="item_medium">Medium</string>
+	<string name="item_hard">Hard</string>
+    
+    <string-array name="spinner_difficulty_item">
+        <item >@string/item_easy</item>
+        <item >@string/item_medium</item>
+        <item >@string/item_hard</item>
+    </string-array>
+    
+    <string name="item_10">10</string>
+    <string name="item_20">20</string>
+    <string name="item_30">30</string>
+    <string name="item_40">40</string>
+    <string name="item_50">50</string>
+    <string name="item_unlimited">Unlimited</string>
+    <string-array name="spinner_total_problem">
+        <item >@string/item_10</item>
+        <item >@string/item_20</item>
+        <item >@string/item_30</item>
+        <item >@string/item_40</item>
+        <item >@string/item_50</item>
+    </string-array>
+    <string-array name="spinner_timer_value">
+        <item >@string/item_10</item>
+        <item >@string/item_20</item>
+        <item >@string/item_30</item>
+        <item >@string/item_40</item>
+        <item >@string/item_50</item>
+        <item >@string/item_unlimited</item>
+    </string-array>
+    
+    <string name="button_next_label">Next</string>
+    <string name="button_evaluate">Evaluate</string>
+    <string name="alert_button_buy">Buy</string>
+    <string name="alert_button_cancel">Cancel</string>
+    <string name="alert_title_buy">Buy Objective Maths</string>
+    <string name="alert_message_difficulty_buy">Install full version for %1$s mode.</string>
+    <string name="alert_message_total_problems_buy">Install full version for %1$s problems selected.</string>
+	<string name="alert_message_timer_value_buy">Install full version for %1$s timer value.</string>
+    
+</resources>
