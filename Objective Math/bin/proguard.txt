@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:33
+-keep class com.devdroid.kidz.free.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:23
+-keep class com.devdroid.kidz.free.MainActivity { <init>(...); }
+

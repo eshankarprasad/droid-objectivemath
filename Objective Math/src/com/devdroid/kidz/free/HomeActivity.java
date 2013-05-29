@@ -13,6 +13,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -22,9 +23,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.devdroid.kidz.free.R;
-
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity 
+{
 	private String operation;
 	private String difficulty;
 	private Integer answer;
@@ -42,6 +42,21 @@ public class HomeActivity extends Activity {
 	
 	private Map<String, String> OPERATOR;
 
+	// UI References
+	private TextView textViewNum1;
+	private TextView textViewNum2;
+	private TextView textViewOperator;
+	private RadioGroup answerRadioGroup;
+	private ImageView resultImageView;
+	private TextView resultTextView;
+	private TextView counterTextView;
+	private Button evaluateButton;
+	private Button nextButton;
+	private TextView textViewExpressionCounter;
+	private RadioButton answerOptionRadio;
+	
+	private Boolean radioButtonChanged = true;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -73,21 +88,21 @@ public class HomeActivity extends Activity {
 		totalWrongAnswer = 0;
 		totalMissed = 0;
 		
-		final TextView textViewExpressionCounter = (TextView) findViewById(R.id.textview_expression_counter);
+		textViewExpressionCounter = (TextView) findViewById(R.id.textview_expression_counter);
 		textViewExpressionCounter.setText(getString(R.string.serial_number) + totalProblem);
 
 		randomNumber1 = new Random();
 		randomNumber2 = new Random();
 
-		final TextView textViewNum1 = (TextView) findViewById(R.id.textview_num1);
-		final TextView textViewNum2 = (TextView) findViewById(R.id.textview_num2);
-		final TextView textViewOperator = (TextView) findViewById(R.id.textview_operator);
-		final RadioGroup answerRadioGroup = (RadioGroup) findViewById(R.id.radiogroup_answers);
-		final ImageView resultImageView = (ImageView) findViewById(R.id.imageview_result);
-		final TextView resultTextView = (TextView) findViewById(R.id.textview_result);
-		final TextView counterTextView = (TextView) findViewById(R.id.textview_counter);
-		final Button evaluateButton = (Button) findViewById(R.id.button_evaluate);
-		final Button nextButton = (Button) findViewById(R.id.button_next_expression);
+		textViewNum1 = (TextView) findViewById(R.id.textview_num1);
+		textViewNum2 = (TextView) findViewById(R.id.textview_num2);
+		textViewOperator = (TextView) findViewById(R.id.textview_operator);
+		answerRadioGroup = (RadioGroup) findViewById(R.id.radiogroup_answers);
+		resultImageView = (ImageView) findViewById(R.id.imageview_result);
+		resultTextView = (TextView) findViewById(R.id.textview_result);
+		counterTextView = (TextView) findViewById(R.id.textview_counter);
+		evaluateButton = (Button) findViewById(R.id.button_evaluate);
+		nextButton = (Button) findViewById(R.id.button_next_expression);
 		
 		timer = new CountDownTimer((totalTimeAlloewed+1)*1000, 1000) {
 
@@ -112,7 +127,8 @@ public class HomeActivity extends Activity {
 		 					public void onClick(DialogInterface dialog,int id) {
 		 						// if this button is clicked, close
 		 						// current activity
-		 						nextButton.performClick();
+		 						//nextButton.performClick();
+		 						nextProblem();
 		 						dialog.cancel();
 		 						totalMissed++;
 		 					}
@@ -138,7 +154,7 @@ public class HomeActivity extends Activity {
 			timer.cancel();
 			counterTextView.setVisibility(View.INVISIBLE);
 		}
-		setExpression(textViewNum1, textViewNum2, textViewOperator);
+		setExpression();
 		
 		setAllChoices(answerRadioGroup);
 		
@@ -146,125 +162,28 @@ public class HomeActivity extends Activity {
 		evaluateButton.setVisibility(View.INVISIBLE);
 		resultTextView.setVisibility(View.INVISIBLE);
 		resultImageView.setVisibility(View.INVISIBLE);
-		nextButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if(totalProblem < totalProblemAllowed)
-				{
-					setExpression(textViewNum1, textViewNum2, textViewOperator);
-					
-					answerRadioGroup.clearCheck();
-						
-					setAllChoices(answerRadioGroup);
-					setRadioGroupEnable(answerRadioGroup, true);
-					nextButton.setVisibility(View.INVISIBLE);
-					evaluateButton.setVisibility(View.VISIBLE);
-					resultImageView.setVisibility(View.INVISIBLE);
-					resultTextView.setVisibility(View.INVISIBLE);
-					evaluateButton.setVisibility(View.INVISIBLE);
-					timer.start();
-					totalProblem++;
-					textViewExpressionCounter.setText(getString(R.string.serial_number) + totalProblem);
-					if(totalProblem == totalProblemAllowed)
-					{
-						nextButton.setText(getString(R.string.button_score_card));
-					}
-				}
-				else
-				{
-					AlertDialog.Builder finishAlertDialogBuilder = new AlertDialog.Builder(
-			 				context);
-			  
-			 			// set title
-					finishAlertDialogBuilder.setTitle(getString(R.string.alert_title_score, ((totalCorrectAnswer  * 100) / totalProblem) + "%"));
-			  
-			 			// set dialog message
-					finishAlertDialogBuilder
-			 				.setMessage(
-			 						getString(R.string.alert_message_score
-			 								, totalProblem + ""
-			 								, (totalProblem-totalMissed) + ""
-			 								, totalCorrectAnswer + ""
-			 								, totalWrongAnswer + ""))
-			 				.setCancelable(false)
-			 				.setPositiveButton(getString(R.string.alert_button_ok), new DialogInterface.OnClickListener() {
-			 					public void onClick(DialogInterface dialog,int id) {
-			 						// if this button is clicked, close
-			 						// current activity
-			 						//nextButton.performClick();
-			 						/*finish();
-			 						Intent intent = new Intent().setClass((Context) thisClass, MainActivity.class);
-			 						startActivity(intent);*/
-			 						dialog.cancel();
-			 						finish();
-			 					}
-			 				  });
-				 				/*.setNegativeButton("No",new DialogInterface.OnClickListener() {
-				 					public void onClick(DialogInterface dialog,int id) {
-				 						// if this button is clicked, just close
-				 						// the dialog box and do nothing
-				 						dialog.cancel();
-				 					}
-				 				});*/
-			  
-			 				// create alert dialog
-			 				AlertDialog alertDialog = finishAlertDialogBuilder.create();
-			  
-			 				// show it
-			 				alertDialog.show();
-				}
-			}
-		});
 		
 		answerRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				// TODO Auto-generated method stub
-				evaluateButton.setVisibility(View.VISIBLE);
+				//evaluateButton.setVisibility(View.VISIBLE);
+				//evaluateButton.performClick();
+				if(radioButtonChanged)
+				{
+					evaluateUserAnswer();
+					
+					Handler handler = new Handler();
+					handler.postDelayed(new Runnable(){
+					@Override
+					      public void run(){
+					        nextProblem();
+					   }
+					}, 1200);
+				}
 			}
 		});
-		
-		evaluateButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) 
-			{
-				RadioGroup answerRadioGroup = (RadioGroup) findViewById(R.id.radiogroup_answers);
-				int selectedId1 = answerRadioGroup.getCheckedRadioButtonId();
-				RadioButton answerOptionRadio = (RadioButton) findViewById(selectedId1);
-				int userAnswer = Integer.parseInt(answerOptionRadio.getText().toString());
-				if(answer == userAnswer)
-				{
-					//Toast.makeText(HomeActivity.this, "Correct answer!", Toast.LENGTH_SHORT).show();
-					resultImageView.setImageResource(R.drawable.correct_image);
-					resultTextView.setText(getString(R.string.label_correct_answer));
-					resultTextView.setTextColor(Color.parseColor("#22B14C"));
-					totalCorrectAnswer++;
-				
-				}
-				else{
-					/*
-					 Toast.makeText(HomeActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
-					 Toast.makeText(HomeActivity.this, answer + " is right answer", Toast.LENGTH_SHORT).show();
-					 */
-					
-					resultImageView.setImageResource(R.drawable.wrong_image);
-					resultTextView.setText(getString(R.string.label_wrong_answer, answer));
-					resultTextView.setTextColor(Color.RED);
-					totalWrongAnswer++;
-				}
-				setRadioGroupEnable(answerRadioGroup, false);
-				nextButton.setVisibility(View.VISIBLE);
-				evaluateButton.setVisibility(View.INVISIBLE);
-				resultImageView.setVisibility(View.VISIBLE);
-				resultTextView.setVisibility(View.VISIBLE);
-				//chronometerTimer.stop();
-				timer.cancel();
-				counterTextView.setText("");
-			}
-		}); 
-
 	}
 
 	@Override
@@ -280,8 +199,8 @@ public class HomeActivity extends Activity {
 		}
 	}
 	
-	public void setExpression(TextView textViewNum1, TextView textViewNum2, TextView textViewOperator) {
-
+	public void setExpression()
+	{
 		int range = getString(R.string.item_easy).equals(difficulty) ? 50 : getString(R.string.item_medium).equals(difficulty) ? 1000 : 10000;
 		int num1 = randomNumber1.nextInt(range) + 1;
 		int num2 = randomNumber2.nextInt(range) + 1;
@@ -396,5 +315,97 @@ public class HomeActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
         timer.cancel();
+	}
+	
+	public void evaluateUserAnswer()
+	{
+		int selectedId1 = answerRadioGroup.getCheckedRadioButtonId();
+		answerOptionRadio = (RadioButton) findViewById(selectedId1);
+		int userAnswer = Integer.parseInt(answerOptionRadio.getText().toString());
+		if(answer == userAnswer)
+		{
+			//Toast.makeText(HomeActivity.this, "Correct answer!", Toast.LENGTH_SHORT).show();
+			resultImageView.setImageResource(R.drawable.correct_image);
+			resultTextView.setText(getString(R.string.label_correct_answer));
+			resultTextView.setTextColor(Color.parseColor("#22B14C"));
+			totalCorrectAnswer++;
+		}
+		else
+		{
+			/*
+			 Toast.makeText(HomeActivity.this, "Wrong answer!", Toast.LENGTH_SHORT).show();
+			 Toast.makeText(HomeActivity.this, answer + " is right answer", Toast.LENGTH_SHORT).show();
+			 */
+			
+			resultImageView.setImageResource(R.drawable.wrong_image);
+			resultTextView.setText(getString(R.string.label_wrong_answer, answer));
+			resultTextView.setTextColor(Color.RED);
+			totalWrongAnswer++;
+		}
+		setRadioGroupEnable(answerRadioGroup, false);
+		//nextButton.setVisibility(View.VISIBLE);
+		//evaluateButton.setVisibility(View.INVISIBLE);
+		resultImageView.setVisibility(View.VISIBLE);
+		resultTextView.setVisibility(View.VISIBLE);
+		//chronometerTimer.stop();
+		timer.cancel();
+		counterTextView.setText("");
+		
+		//nextProblem();
+	}
+	
+	public void nextProblem()
+	{	
+		
+		if(totalProblem < totalProblemAllowed)
+		{
+			setExpression();
+			radioButtonChanged = false;
+			answerRadioGroup.clearCheck();
+			setAllChoices(answerRadioGroup);
+			setRadioGroupEnable(answerRadioGroup, true);
+			//nextButton.setVisibility(View.INVISIBLE);
+			//evaluateButton.setVisibility(View.VISIBLE);
+			resultImageView.setVisibility(View.INVISIBLE);
+			resultTextView.setVisibility(View.INVISIBLE);
+			//evaluateButton.setVisibility(View.INVISIBLE);
+			timer.start();
+			totalProblem++;
+			textViewExpressionCounter.setText(getString(R.string.serial_number) + totalProblem);
+			radioButtonChanged = true;
+		}
+		else
+		{
+			AlertDialog.Builder finishAlertDialogBuilder = new AlertDialog.Builder(
+	 				context);
+	  
+	 			// set title
+			finishAlertDialogBuilder.setTitle(getString(R.string.alert_title_score, ((totalCorrectAnswer  * 100) / totalProblem) + "%"));
+	  
+	 			// set dialog message
+			finishAlertDialogBuilder
+	 				.setMessage(
+	 						getString(R.string.alert_message_score
+	 								, totalProblem + ""
+	 								, (totalProblem-totalMissed) + ""
+	 								, totalCorrectAnswer + ""
+	 								, totalWrongAnswer + ""))
+	 				.setCancelable(false)
+	 				.setPositiveButton(getString(R.string.alert_button_ok), new DialogInterface.OnClickListener() {
+	 					public void onClick(DialogInterface dialog,int id) {
+	 						// if this button is clicked, close
+	 						// current activity
+	 						dialog.cancel();
+	 						finish();
+	 					}
+	 				  });
+	  
+	 				// create alert dialog
+	 				AlertDialog alertDialog = finishAlertDialogBuilder.create();
+	  
+	 				// show it
+	 				alertDialog.show();
+		}
+	
 	}
 }
