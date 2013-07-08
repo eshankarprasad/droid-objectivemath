@@ -14,7 +14,7 @@
     
     <string name="serial_number">Sr. no.</string>
     <string name="button_score_card">Score Card</string>
-    <string name="alert_title_score">Score : %1$s %</string>
+    <string name="alert_title_score">Result</string>
     <string name="alert_title_alert">Alert</string>
     <string name="alert_button_ok">OK</string>
     <string name="label_message_going_for_next_expression">Going for next expression!</string>
@@ -22,7 +22,10 @@
     <string name="alert_message_timeup">Time up!</string>
     <string name="label_wrong_answer">Wrong answer!\n %1$s is right answer</string>
     <string name="label_correct_answer">Correct answer!</string>
-    <string name="alert_message_score">Total Problems : %2$s \nAttempted : %1$s \nCorrect : %3$s \nWrong : %4$s</string>
+    <string name="alert_message_score">Score : %1$s \nTotal Problems : %2$s \nAttempted : %3$s \nCorrect : %4$s \nWrong : %5$s</string>
+    <string name="alert_message_title_win">%1$s won the game!!</string>
+    <string name="alert_message_title_tie">Game tie!!</string>
+    <string name="alert_message_title_single_player">Your Score</string>
     
     <string name="button_addition_label">Addition</string>
     <string name="button_subtraction_label">Subtraction</string>
@@ -70,4 +73,10 @@
     <string name="alert_message_total_problems_buy">Install full version for %1$s problems selected.</string>
 	<string name="alert_message_timer_value_buy">Install full version for %1$s timer value.</string>
     
+	<string name="label_single_player">Single Player</string>
+	<string name="label_double_player">Double Player</string>
+	<string name="label_1st_player_name">1st Player Name</string>
+	<string name="label_2nd_player_name">2nd Player Name</string>
+	<string name="label_button_time_up">Your time has been expired. Press here to continue!</string>
+	
 </resources>

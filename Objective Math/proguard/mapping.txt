@@ -746,93 +746,153 @@ android.support.v4.widget.EdgeEffectCompatIcs -> android.support.v4.d.e:
     boolean onRelease(java.lang.Object) -> c
     boolean draw(java.lang.Object,android.graphics.Canvas) -> a
 com.devdroid.kidz.free.HomeActivity -> com.devdroid.kidz.free.HomeActivity:
-    java.lang.String operation -> c
-    java.lang.String difficulty -> d
-    java.lang.Integer answer -> e
-    java.util.Random randomNumber1 -> f
-    java.util.Random randomNumber2 -> g
+    java.lang.String operation -> b
+    java.lang.String difficulty -> c
+    java.lang.Integer answerPlayer1 -> d
+    java.lang.Integer answerPlayer2 -> e
+    java.util.Random randomNumber1Player1 -> f
+    java.util.Random randomNumber1Player2 -> g
+    java.util.Random randomNumber2Player1 -> h
+    java.util.Random randomNumber2Player2 -> i
     android.content.Context context -> a
-    java.lang.Integer totalProblem -> h
-    java.lang.Integer totalCorrectAnswer -> i
-    java.lang.Integer totalWrongAnswer -> j
-    java.lang.Integer totalMissed -> k
-    android.os.CountDownTimer timer -> b
-    java.lang.Integer totalProblemAllowed -> l
-    java.lang.Integer totalTimeAlloewed -> m
-    java.util.Map OPERATOR -> n
-    android.widget.TextView textViewNum1 -> o
-    android.widget.TextView textViewNum2 -> p
-    android.widget.TextView textViewOperator -> q
-    android.widget.RadioGroup answerRadioGroup -> r
-    android.widget.ImageView resultImageView -> s
-    android.widget.TextView resultTextView -> t
-    android.widget.TextView counterTextView -> u
-    android.widget.Button evaluateButton -> v
-    android.widget.Button nextButton -> w
-    android.widget.TextView textViewExpressionCounter -> x
-    android.widget.RadioButton answerOptionRadio -> y
-    java.lang.Boolean radioButtonChanged -> z
+    java.lang.Integer totalProblemPassedPlayer1 -> j
+    java.lang.Integer totalProblemPassedPlayer2 -> k
+    java.lang.Integer totalCorrectAnswerPlayer1 -> l
+    java.lang.Integer totalCorrectAnswerPlayer2 -> m
+    java.lang.Integer totalWrongAnswerPlayer1 -> n
+    java.lang.Integer totalWrongAnswerPlayer2 -> o
+    java.lang.Integer totalMissedPlayer1 -> p
+    java.lang.Integer totalMissedPlayer2 -> q
+    java.lang.String playerMode -> r
+    java.lang.String firstPlayerName -> s
+    java.lang.String secondPlayerName -> t
+    android.os.CountDownTimer timerPlayer1 -> u
+    android.os.CountDownTimer timerPlayer2 -> v
+    java.lang.Integer totalProblemAllowed -> w
+    java.lang.Integer totalTimeAlloewed -> x
+    java.util.Map OPERATOR -> y
+    android.widget.TextView textViewNum1Player1 -> z
+    android.widget.TextView textViewNum1Player2 -> A
+    android.widget.TextView textViewNum2Player1 -> B
+    android.widget.TextView textViewNum2Player2 -> C
+    android.widget.TextView textViewOperatorPlayer1 -> D
+    android.widget.TextView textViewOperatorPlayer2 -> E
+    android.widget.RadioGroup answerRadioGroupPlayer1 -> F
+    android.widget.RadioGroup answerRadioGroupPlayer2 -> G
+    android.widget.ImageView resultImageViewPlayer1 -> H
+    android.widget.ImageView resultImageViewPlayer2 -> I
+    android.widget.TextView resultTextViewPlayer1 -> J
+    android.widget.TextView resultTextViewPlayer2 -> K
+    android.widget.TextView counterTextViewPlayer1 -> L
+    android.widget.TextView counterTextViewPlayer2 -> M
+    android.widget.TextView textViewExpressionCounterPlayer1 -> N
+    android.widget.TextView textViewExpressionCounterPlayer2 -> O
+    android.widget.Button buttonTimeUpPlayer1 -> P
+    android.widget.Button buttonTimeUpPlayer2 -> Q
+    java.lang.Boolean radioButtonChangedPlayer1 -> R
+    java.lang.Boolean radioButtonChangedPlayer2 -> S
+    java.lang.Boolean timerTaskPlayer1 -> T
+    java.lang.Boolean timerTaskPlayer2 -> U
     void onCreate(android.os.Bundle) -> onCreate
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     void setRadioGroupEnable(android.widget.RadioGroup,boolean) -> a
-    void setExpression() -> a
-    void setAllChoices(android.widget.RadioGroup) -> a
+    void setExpressionForFirstPlayer() -> a
+    void setExpressionForSecondPlayer() -> b
+    void setAllChoices(android.widget.RadioGroup,java.lang.Integer) -> a
     int getAnswer(int,int,java.lang.String) -> a
     void onDestroy() -> onDestroy
-    void evaluateUserAnswer() -> b
-    void nextProblem() -> c
+    void evaluateUserAnswerPlayer1() -> c
+    void evaluateUserAnswerPlayer2() -> d
+    void nextProblemPlayer1() -> e
+    void nextProblemPlayer2() -> f
+    boolean checkGameStatus() -> g
     android.widget.TextView access$0(com.devdroid.kidz.free.HomeActivity) -> a
-    java.lang.Integer access$1(com.devdroid.kidz.free.HomeActivity) -> b
-    void access$2(com.devdroid.kidz.free.HomeActivity,java.lang.Integer) -> a
-    java.lang.Boolean access$3(com.devdroid.kidz.free.HomeActivity) -> c
+    void access$1(com.devdroid.kidz.free.HomeActivity,java.lang.Boolean) -> a
+    android.widget.Button access$2(com.devdroid.kidz.free.HomeActivity) -> b
+    android.widget.RadioGroup access$3(com.devdroid.kidz.free.HomeActivity) -> c
+    java.lang.Integer access$4(com.devdroid.kidz.free.HomeActivity) -> d
+    void access$5(com.devdroid.kidz.free.HomeActivity,java.lang.Integer) -> a
+    java.lang.Boolean access$6(com.devdroid.kidz.free.HomeActivity) -> e
+    void access$7(com.devdroid.kidz.free.HomeActivity,java.lang.Boolean) -> b
+    android.widget.TextView access$8(com.devdroid.kidz.free.HomeActivity) -> f
+    android.widget.Button access$9(com.devdroid.kidz.free.HomeActivity) -> g
+    android.widget.RadioGroup access$10(com.devdroid.kidz.free.HomeActivity) -> h
+    java.lang.Integer access$11(com.devdroid.kidz.free.HomeActivity) -> i
+    void access$12(com.devdroid.kidz.free.HomeActivity,java.lang.Integer) -> b
+    java.lang.Boolean access$13(com.devdroid.kidz.free.HomeActivity) -> j
 com.devdroid.kidz.free.HomeActivity$1 -> com.devdroid.kidz.free.a:
     com.devdroid.kidz.free.HomeActivity this$0 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
-    com.devdroid.kidz.free.HomeActivity access$0(com.devdroid.kidz.free.HomeActivity$1) -> a
-com.devdroid.kidz.free.HomeActivity$1$1 -> com.devdroid.kidz.free.b:
-    com.devdroid.kidz.free.HomeActivity$1 this$1 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.devdroid.kidz.free.HomeActivity$2 -> com.devdroid.kidz.free.c:
+com.devdroid.kidz.free.HomeActivity$2 -> com.devdroid.kidz.free.b:
     com.devdroid.kidz.free.HomeActivity this$0 -> a
     void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
     com.devdroid.kidz.free.HomeActivity access$0(com.devdroid.kidz.free.HomeActivity$2) -> a
-com.devdroid.kidz.free.HomeActivity$2$1 -> com.devdroid.kidz.free.d:
+com.devdroid.kidz.free.HomeActivity$2$1 -> com.devdroid.kidz.free.c:
     com.devdroid.kidz.free.HomeActivity$2 this$1 -> a
     void run() -> run
-com.devdroid.kidz.free.HomeActivity$3 -> com.devdroid.kidz.free.e:
+com.devdroid.kidz.free.HomeActivity$3 -> com.devdroid.kidz.free.d:
+    com.devdroid.kidz.free.HomeActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.devdroid.kidz.free.HomeActivity$4 -> com.devdroid.kidz.free.e:
+    com.devdroid.kidz.free.HomeActivity this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.devdroid.kidz.free.HomeActivity$5 -> com.devdroid.kidz.free.f:
+    com.devdroid.kidz.free.HomeActivity this$0 -> a
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
+    com.devdroid.kidz.free.HomeActivity access$0(com.devdroid.kidz.free.HomeActivity$5) -> a
+com.devdroid.kidz.free.HomeActivity$5$1 -> com.devdroid.kidz.free.g:
+    com.devdroid.kidz.free.HomeActivity$5 this$1 -> a
+    void run() -> run
+com.devdroid.kidz.free.HomeActivity$6 -> com.devdroid.kidz.free.h:
+    com.devdroid.kidz.free.HomeActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.devdroid.kidz.free.HomeActivity$7 -> com.devdroid.kidz.free.i:
+    com.devdroid.kidz.free.HomeActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.devdroid.kidz.free.HomeActivity$8 -> com.devdroid.kidz.free.j:
     com.devdroid.kidz.free.HomeActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.devdroid.kidz.free.MainActivity -> com.devdroid.kidz.free.MainActivity:
     android.content.Context context -> a
-    void launchHome(android.widget.Spinner,android.widget.Spinner,android.widget.Spinner,android.content.Intent,android.view.View) -> a
+    android.widget.Spinner difficultySpinner -> b
+    android.widget.Spinner totalProblemSpinner -> c
+    android.widget.Spinner timerValueSpinner -> d
+    android.widget.Button additionButton -> e
+    android.widget.Button subtractionButton -> f
+    android.widget.Button multiplicationButton -> g
+    android.widget.Button divisionButton -> h
+    android.widget.RadioGroup radioGroupPlayers -> i
+    android.widget.EditText editText1stPlayerName -> j
+    android.widget.EditText editText2ndPlayerName -> k
+    android.widget.RadioButton playersOption -> l
+    android.view.View firstPlayerNameView -> m
+    android.view.View secondPlayerNameView -> n
+    void launchHome(android.content.Intent,android.view.View) -> a
     void onCreate(android.os.Bundle) -> onCreate
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-com.devdroid.kidz.free.MainActivity$1 -> com.devdroid.kidz.free.f:
+    void access$0(com.devdroid.kidz.free.MainActivity,android.widget.RadioButton) -> a
+    android.widget.EditText access$1(com.devdroid.kidz.free.MainActivity) -> a
+    android.widget.EditText access$2(com.devdroid.kidz.free.MainActivity) -> b
+    android.view.View access$3(com.devdroid.kidz.free.MainActivity) -> c
+    android.view.View access$4(com.devdroid.kidz.free.MainActivity) -> d
+com.devdroid.kidz.free.MainActivity$1 -> com.devdroid.kidz.free.k:
     com.devdroid.kidz.free.MainActivity this$0 -> a
-    android.widget.Spinner val$difficultySpinner -> b
-    android.widget.Spinner val$totalProblemSpinner -> c
-    android.widget.Spinner val$timerValueSpinner -> d
-    android.content.Intent val$intent -> e
+    android.content.Intent val$intent -> b
     void onClick(android.view.View) -> onClick
-com.devdroid.kidz.free.MainActivity$2 -> com.devdroid.kidz.free.g:
+com.devdroid.kidz.free.MainActivity$2 -> com.devdroid.kidz.free.l:
     com.devdroid.kidz.free.MainActivity this$0 -> a
-    android.widget.Spinner val$difficultySpinner -> b
-    android.widget.Spinner val$totalProblemSpinner -> c
-    android.widget.Spinner val$timerValueSpinner -> d
-    android.content.Intent val$intent -> e
+    android.content.Intent val$intent -> b
     void onClick(android.view.View) -> onClick
-com.devdroid.kidz.free.MainActivity$3 -> com.devdroid.kidz.free.h:
+com.devdroid.kidz.free.MainActivity$3 -> com.devdroid.kidz.free.m:
     com.devdroid.kidz.free.MainActivity this$0 -> a
-    android.widget.Spinner val$difficultySpinner -> b
-    android.widget.Spinner val$totalProblemSpinner -> c
-    android.widget.Spinner val$timerValueSpinner -> d
-    android.content.Intent val$intent -> e
+    android.content.Intent val$intent -> b
     void onClick(android.view.View) -> onClick
-com.devdroid.kidz.free.MainActivity$4 -> com.devdroid.kidz.free.i:
+com.devdroid.kidz.free.MainActivity$4 -> com.devdroid.kidz.free.n:
     com.devdroid.kidz.free.MainActivity this$0 -> a
-    android.widget.Spinner val$difficultySpinner -> b
-    android.widget.Spinner val$totalProblemSpinner -> c
-    android.widget.Spinner val$timerValueSpinner -> d
-    android.content.Intent val$intent -> e
+    android.content.Intent val$intent -> b
     void onClick(android.view.View) -> onClick
+com.devdroid.kidz.free.MainActivity$5 -> com.devdroid.kidz.free.o:
+    com.devdroid.kidz.free.MainActivity this$0 -> a
+    void onCheckedChanged(android.widget.RadioGroup,int) -> onCheckedChanged
