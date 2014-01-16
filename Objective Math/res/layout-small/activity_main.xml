@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background_main"
@@ -15,7 +16,7 @@
         android:gravity="center"
         android:text="@string/textview_start_label"
         android:textColor="#9C271C"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -192,5 +193,14 @@
         android:layout_below="@id/button_multiplication"
         android:layout_centerInParent="true"
         android:text="@string/button_division_label" />
-
+    
+	<com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="a152d781f4e0f9b"
+        ads:loadAdOnCreate="true" >
+    </com.google.ads.AdView>
 </RelativeLayout>

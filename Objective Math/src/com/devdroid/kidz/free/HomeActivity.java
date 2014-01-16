@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import com.google.ads.Ad;
+import com.google.ads.AdListener;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
+import com.google.ads.AdRequest.ErrorCode;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -95,6 +101,8 @@ public class HomeActivity extends Activity
 	private Boolean timerTaskPlayer1 = false;
 	private Boolean timerTaskPlayer2 = false;
 	
+	private AdView adView;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -184,7 +192,7 @@ public class HomeActivity extends Activity
 		setAllChoices(answerRadioGroupPlayer1, answerPlayer1);
 		
 		resultTextViewPlayer1.setVisibility(View.INVISIBLE);
-		resultImageViewPlayer1.setVisibility(View.INVISIBLE);
+		resultImageViewPlayer1.setVisibility(View.GONE);
 		
 		answerRadioGroupPlayer1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() 
 		{
@@ -271,7 +279,7 @@ public class HomeActivity extends Activity
 			setAllChoices(answerRadioGroupPlayer2, answerPlayer2);
 			
 			resultTextViewPlayer2.setVisibility(View.INVISIBLE);
-			resultImageViewPlayer2.setVisibility(View.INVISIBLE);
+			resultImageViewPlayer2.setVisibility(View.GONE);
 			
 			answerRadioGroupPlayer2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() 
 			{
@@ -305,6 +313,39 @@ public class HomeActivity extends Activity
 				}
 			});
 		}
+		
+		// Create an ad.
+		adView = (AdView) findViewById(R.id.adView);
+
+		// Create an ad request.
+		AdRequest adRequest = new AdRequest();
+		// Fill out ad request.
+
+		// Start loading the ad in the background.
+		adView.loadAd(adRequest);
+
+		adView.setAdListener(new AdListener() {
+			public void onReceiveAd(Ad arg0) {
+				adView.setVisibility(View.VISIBLE);
+			}
+
+			public void onPresentScreen(Ad arg0) {
+
+			}
+
+			public void onLeaveApplication(Ad arg0) {
+
+			}
+
+			public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1) {
+				Log.e("AdView", "onFailedToReceiveAd");
+				adView.setVisibility(View.GONE);
+			}
+
+			public void onDismissScreen(Ad arg0) {
+
+			}
+		});
 	}
 
 	@Override
@@ -582,7 +623,7 @@ public class HomeActivity extends Activity
 			answerRadioGroupPlayer1.clearCheck();
 			setAllChoices(answerRadioGroupPlayer1, answerPlayer1);
 			setRadioGroupEnable(answerRadioGroupPlayer1, true);
-			resultImageViewPlayer1.setVisibility(View.INVISIBLE);
+			resultImageViewPlayer1.setVisibility(View.GONE);
 			resultTextViewPlayer1.setVisibility(View.INVISIBLE);
 			timerPlayer1.start();
 			totalProblemPassedPlayer1++;
@@ -690,7 +731,7 @@ public class HomeActivity extends Activity
 			answerRadioGroupPlayer2.clearCheck();
 			setAllChoices(answerRadioGroupPlayer2, answerPlayer2);
 			setRadioGroupEnable(answerRadioGroupPlayer2, true);
-			resultImageViewPlayer2.setVisibility(View.INVISIBLE);
+			resultImageViewPlayer2.setVisibility(View.GONE);
 			resultTextViewPlayer2.setVisibility(View.INVISIBLE);
 			timerPlayer2.start();
 			totalProblemPassedPlayer2++;

@@ -1,6 +1,22 @@
-# view AndroidManifest.xml #generated:33
+# view AndroidManifest.xml #generated:37
 -keep class com.devdroid.kidz.free.HomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:23
+# view AndroidManifest.xml #generated:27
 -keep class com.devdroid.kidz.free.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.google.ads.AdActivity { <init>(...); }
+
+# view large\res/layout-large/activity_home.xml #generated:142
+# view large\res/layout-large/activity_home_2_player.xml #generated:301
+# view large\res/layout-large/activity_main.xml #generated:197
+# view res/layout/activity_home.xml #generated:147
+# view res/layout/activity_home_2_player.xml #generated:310
+# view res/layout/activity_main.xml #generated:197
+# view small\res/layout-small/activity_home.xml #generated:147
+# view small\res/layout-small/activity_main.xml #generated:197
+# view xlarge\res/layout-xlarge/activity_home.xml #generated:142
+# view xlarge\res/layout-xlarge/activity_home_2_player.xml #generated:304
+# view xlarge\res/layout-xlarge/activity_main.xml #generated:197
+-keep class com.google.ads.AdView { <init>(...); }
 

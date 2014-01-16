@@ -1,148 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/contaier_player1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background_home"
-    android:gravity="center_vertical|center_horizontal"
-    android:orientation="vertical" >
+    android:gravity="center_vertical|center_horizontal" >
 
-    <RelativeLayout
-        android:id="@+id/contaier_player1"
+    <TextView
+        android:id="@+id/textview_expression_counter_player1"
         android:layout_width="fill_parent"
-        android:layout_height="500dp"
-        android:gravity="center_vertical|center_horizontal" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:gravity="right"
+        android:text="3/10"
+        android:textColor="#3899D8"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_player1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_expression_counter_player1"
+        android:gravity="center_horizontal" >
 
         <TextView
-            android:id="@+id/textview_expression_counter_player1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="5dp"
-            android:gravity="right"
-            android:text="3/10"
-            android:textColor="#3899D8"
-            android:textSize="10sp" />
-
-        <LinearLayout
-            android:id="@+id/linear_layout_player1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textview_expression_counter_player1"
-            android:gravity="center_horizontal" >
-
-            <TextView
-                android:id="@+id/textview_num1_player1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11"
-                android:textColor="#9C271C"
-                android:textSize="@android:dimen/app_icon_size"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview_operator_player1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:text="x"
-                android:textSize="@android:dimen/app_icon_size"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview_num2_player1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:textColor="#9C271C"
-                android:textSize="@android:dimen/app_icon_size"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textview_result_player1"
+            android:id="@+id/textview_num1_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_layout_player1"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"
-            android:text="Result&apos;ll be shown here"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="11"
+            android:textColor="#9C271C"
+            android:textSize="@android:dimen/app_icon_size"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageview_result_player1"
+        <TextView
+            android:id="@+id/textview_operator_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textview_result_player1"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true"
-            android:maxHeight="@android:dimen/app_icon_size"
-            android:maxWidth="@android:dimen/app_icon_size"
-            android:scaleType="fitXY"
-            android:src="@drawable/correct_image" />
-
-        <Button 
-            android:id="@+id/button_time_up_player1"
-            android:layout_width="400dp"
-            android:layout_height="200dp"
-            android:visibility="gone"
-            android:text="@string/label_button_time_up"
-            android:textColor="#662211"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-        
-        <RadioGroup
-            android:id="@+id/radiogroup_answers_player1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageview_result_player1"
-            android:layout_centerHorizontal="true"
-            android:orientation="vertical" >
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Ans1"
-                android:textColor="#3899D8"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Ans2"
-                android:textColor="#3899D8"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Ans3"
-                android:textColor="#3899D8"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Ans4"
-                android:textColor="#3899D8"
-                android:textStyle="bold" />
-        </RadioGroup>
+            android:layout_marginBottom="32dp"
+            android:text="x"
+            android:textSize="@android:dimen/app_icon_size"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textview_counter_player1"
+            android:id="@+id/textview_num2_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/radiogroup_answers_player1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
-            android:text="Countdown Timer"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </RelativeLayout>
+            android:text="12"
+            android:textColor="#9C271C"
+            android:textSize="@android:dimen/app_icon_size"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textview_result_player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_player1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="Result&apos;ll be shown here"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageview_result_player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_result_player1"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:maxHeight="@android:dimen/app_icon_size"
+        android:maxWidth="@android:dimen/app_icon_size"
+        android:scaleType="fitXY"
+        android:src="@drawable/correct_image" />
+
+    <Button
+        android:id="@+id/button_time_up_player1"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/label_button_time_up"
+        android:textColor="#662211"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup_answers_player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview_result_player1"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ans1"
+            android:textColor="#3899D8"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ans2"
+            android:textColor="#3899D8"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ans3"
+            android:textColor="#3899D8"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Ans4"
+            android:textColor="#3899D8"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textview_counter_player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radiogroup_answers_player1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:text="Countdown Timer"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="a152d781f4e0f9b"
+        ads:loadAdOnCreate="true" >
+    </com.google.ads.AdView>
+</RelativeLayout>

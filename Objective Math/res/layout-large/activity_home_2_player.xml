@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -9,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/contaier_player1"
         android:layout_width="fill_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:rotation="180" >
 
@@ -22,8 +23,9 @@
             android:layout_marginRight="5dp"
             android:gravity="right"
             android:text="3/10"
-            android:textColor="#3899D8"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textColor="#6A6A6A"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <LinearLayout
             android:id="@+id/linear_layout_player1"
@@ -45,10 +47,9 @@
                 android:id="@+id/textview_operator_player1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="10dp"
                 android:text="x"
-                android:textSize="@android:dimen/app_icon_size"
-                android:textStyle="bold" />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/textview_num2_player1"
@@ -142,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/radiogroup_answers_player1"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
+            android:layout_marginBottom="10dp"
             android:text="Countdown Timer"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </RelativeLayout>
@@ -161,7 +162,7 @@
     <RelativeLayout
         android:id="@+id/container_player2"
         android:layout_width="fill_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal" >
 
         <TextView
@@ -173,8 +174,9 @@
             android:layout_marginRight="5dp"
             android:gravity="right"
             android:text="3/10"
-            android:textColor="#3899D8"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textColor="#6A6A6A"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <LinearLayout
             android:id="@+id/linear_layout_player2"
@@ -196,7 +198,7 @@
                 android:id="@+id/textview_operator_player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="10dp"
                 android:text="x"
                 android:textSize="@android:dimen/app_icon_size"
                 android:textStyle="bold" />
@@ -293,9 +295,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/radiogroup_answers_player2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
+            android:layout_marginBottom="10dp"
             android:text="Countdown Timer"
             android:textAppearance="?android:attr/textAppearanceSmall" />
+        <com.google.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="a152d781f4e0f9b"
+            ads:loadAdOnCreate="true" >
+        </com.google.ads.AdView>
     </RelativeLayout>
 
 </LinearLayout>

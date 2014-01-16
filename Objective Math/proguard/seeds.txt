@@ -57,6 +57,7 @@ com.devdroid.kidz.free.R$drawable: int start_button
 com.devdroid.kidz.free.R$drawable: int start_button_deep
 com.devdroid.kidz.free.R$drawable: int start_button_light
 com.devdroid.kidz.free.R$drawable: int wrong_image
+com.devdroid.kidz.free.R$id: int adView
 com.devdroid.kidz.free.R$id: int button_addtion
 com.devdroid.kidz.free.R$id: int button_division
 com.devdroid.kidz.free.R$id: int button_multiplication
@@ -159,3 +160,42 @@ com.devdroid.kidz.free.R$string: int serial_number
 com.devdroid.kidz.free.R$string: int textview_start_label
 com.devdroid.kidz.free.R$string: int title_activity_main
 com.devdroid.kidz.free.R$style: int AppTheme
+com.google.ads.AdActivity
+com.google.ads.AdActivity: AdActivity()
+com.google.ads.AdActivity: void onClick(android.view.View)
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
+com.google.ads.AdView
+com.google.ads.AdView: AdView(android.app.Activity,com.google.ads.AdSize,java.lang.String)
+com.google.ads.AdView: AdView(android.app.Activity,com.google.ads.AdSize[],java.lang.String)
+com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet)
+com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet,int)
+com.google.ads.AdView: void setAdListener(com.google.ads.AdListener)
+com.google.ads.AdView: void setAppEventListener(com.google.ads.AppEventListener)
+com.google.ads.AdView: void setSwipeableEventListener(com.google.ads.SwipeableAdListener)
+com.google.ads.AdView: void setSupportedAdSizes(com.google.ads.AdSize[])
+com.google.ads.doubleclick.DfpAdView: void setAppEventListener(com.google.ads.AppEventListener)
+com.google.ads.doubleclick.DfpAdView: void setSupportedAdSizes(com.google.ads.AdSize[])
+com.google.ads.doubleclick.SwipeableDfpAdView: void setSwipeableEventListener(com.google.ads.SwipeableAdListener)
+com.google.ads.g$a: com.google.ads.g$a[] values()
+com.google.ads.g$a: com.google.ads.g$a valueOf(java.lang.String)
+com.google.ads.internal.ActivationOverlay: void setOverlayEnabled(boolean)
+com.google.ads.internal.ActivationOverlay: void setOverlayActivated(boolean)
+com.google.ads.internal.ActivationOverlay: void setYPosition(int)
+com.google.ads.internal.ActivationOverlay: void setXPosition(int)
+com.google.ads.internal.AdVideoView: void setMediaControllerEnabled(boolean)
+com.google.ads.internal.AdVideoView: void setSrc(java.lang.String)
+com.google.ads.internal.AdWebView: void setAdActivity(com.google.ads.AdActivity)
+com.google.ads.internal.AdWebView: void setAdSize(com.google.ads.AdSize)
+com.google.ads.internal.AdWebView: void setCustomClose(boolean)
+com.google.ads.internal.AdWebView: void setIsExpandedMraid(boolean)
+com.google.ads.internal.c$d: com.google.ads.internal.c$d[] values()
+com.google.ads.internal.c$d: com.google.ads.internal.c$d valueOf(java.lang.String)
+com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType[] values()
+com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType valueOf(java.lang.String)
+com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a[] values()
+com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a valueOf(java.lang.String)
+com.google.ads.util.b$a: com.google.ads.util.b$a[] values()
+com.google.ads.util.b$a: com.google.ads.util.b$a valueOf(java.lang.String)

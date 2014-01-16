@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background_home"
     android:gravity="center_vertical|center_horizontal"
-    android:background="@drawable/background_home" >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/contaier_player1"
         android:layout_width="fill_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:gravity="top|center_horizontal"
         android:rotation="180" >
 
@@ -22,8 +23,9 @@
             android:layout_marginRight="5dp"
             android:gravity="right"
             android:text="3/10"
-            android:textColor="#3899D8"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textColor="#6A6A6A"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <LinearLayout
             android:id="@+id/linear_layout_player1"
@@ -58,44 +60,43 @@
                 android:textColor="#9C271C"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <TextView
-                android:id="@+id/textview_result_player1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/linear_layout_player1"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal"
-                android:text="Result&apos;ll be shown here"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        
+            android:id="@+id/textview_result_player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_player1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="Result&apos;ll be shown here"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/imageview_result_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview_result_player1"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
             android:adjustViewBounds="true"
             android:maxHeight="@android:dimen/app_icon_size"
             android:maxWidth="@android:dimen/app_icon_size"
             android:scaleType="fitXY"
-            android:src="@drawable/correct_image"
-            android:layout_marginBottom="5dp" />
+            android:src="@drawable/correct_image" />
 
-        <Button 
+        <Button
             android:id="@+id/button_time_up_player1"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/label_button_time_up"
             android:textColor="#662211"
             android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-        
+            android:visibility="gone" />
+
         <RadioGroup
             android:id="@+id/radiogroup_answers_player1"
             android:layout_width="wrap_content"
@@ -110,8 +111,8 @@
                 android:checked="false"
                 android:text="Ans1"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -119,8 +120,8 @@
                 android:checked="false"
                 android:text="Ans2"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -128,8 +129,8 @@
                 android:checked="false"
                 android:text="Ans3"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -137,8 +138,8 @@
                 android:checked="false"
                 android:text="Ans4"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </RadioGroup>
 
         <TextView
@@ -149,24 +150,24 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="29dp"
             android:text="Countdown Timer"
-            android:textSize="10sp" />
+            android:textAppearance="?android:attr/textAppearanceSmall" />
     </RelativeLayout>
-    
+
     <!-- ************************************* -->
-    
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="2dp"
         android:background="#777777" >
     </View>
-    
+
     <!-- ************************************* -->
     <!-- android:gravity="center_vertical|center_horizontal" -->
-    
+
     <RelativeLayout
         android:id="@+id/container_player2"
         android:layout_width="fill_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:gravity="top|center_horizontal" >
 
         <TextView
@@ -178,8 +179,9 @@
             android:layout_marginRight="5dp"
             android:gravity="right"
             android:text="3/10"
-            android:textColor="#3899D8"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textColor="#6A6A6A"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <LinearLayout
             android:id="@+id/linear_layout_player2"
@@ -214,44 +216,43 @@
                 android:textColor="#9C271C"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <TextView
-                android:id="@+id/textview_result_player2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/linear_layout_player2"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal"
-                android:text="Result&apos;ll be shown here"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        
+            android:id="@+id/textview_result_player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_player2"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="Result&apos;ll be shown here"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/imageview_result_player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview_result_player2"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
             android:adjustViewBounds="true"
             android:maxHeight="@android:dimen/app_icon_size"
             android:maxWidth="@android:dimen/app_icon_size"
             android:scaleType="fitXY"
-            android:src="@drawable/correct_image"
-            android:layout_marginBottom="5dp" />
+            android:src="@drawable/correct_image" />
 
-        <Button 
+        <Button
             android:id="@+id/button_time_up_player2"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/label_button_time_up"
             android:textColor="#662211"
             android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-        
+            android:visibility="gone" />
+
         <RadioGroup
             android:id="@+id/radiogroup_answers_player2"
             android:layout_width="wrap_content"
@@ -266,8 +267,8 @@
                 android:checked="false"
                 android:text="Ans1"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -284,8 +285,8 @@
                 android:checked="false"
                 android:text="Ans3"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -293,9 +294,8 @@
                 android:checked="false"
                 android:text="Ans4"
                 android:textColor="#3899D8"
-                android:textStyle="bold"
                 android:textSize="14sp"
- />
+                android:textStyle="bold" />
         </RadioGroup>
 
         <TextView
@@ -304,9 +304,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/radiogroup_answers_player2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
             android:text="Countdown Timer"
-            android:textSize="10sp" />
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <com.google.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="a152d781f4e0f9b"
+            ads:loadAdOnCreate="true" >
+        </com.google.ads.AdView>
     </RelativeLayout>
 
 </LinearLayout>

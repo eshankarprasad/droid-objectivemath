@@ -16,6 +16,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import com.google.ads.Ad;
+import com.google.ads.AdListener;
+import com.google.ads.AdRequest;
+import com.google.ads.AdRequest.ErrorCode;
+import com.google.ads.AdView;
+
 public class MainActivity extends Activity 
 {
 	final Context context = this;
@@ -34,6 +40,7 @@ public class MainActivity extends Activity
 	private RadioButton playersOption;
 	private View firstPlayerNameView;
 	private View secondPlayerNameView;
+	private AdView adView;
 	
 	public void launchHome(Intent intent, View view) 
 	{
@@ -178,6 +185,39 @@ public class MainActivity extends Activity
 				}
 	            
 				//Log.d("Main Activity", playersOption.getText().toString());
+			}
+		});
+		
+		// Create an ad.
+		adView = (AdView) findViewById(R.id.adView);
+
+		// Create an ad request.
+		AdRequest adRequest = new AdRequest();
+		// Fill out ad request.
+
+		// Start loading the ad in the background.
+		adView.loadAd(adRequest);
+
+		adView.setAdListener(new AdListener() {
+			public void onReceiveAd(Ad arg0) {
+				adView.setVisibility(View.VISIBLE);
+			}
+
+			public void onPresentScreen(Ad arg0) {
+
+			}
+
+			public void onLeaveApplication(Ad arg0) {
+
+			}
+
+			public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1) {
+				Log.e("AdView", "onFailedToReceiveAd");
+				adView.setVisibility(View.GONE);
+			}
+
+			public void onDismissScreen(Ad arg0) {
+
 			}
 		});
 	}
