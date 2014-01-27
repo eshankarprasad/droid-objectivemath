@@ -175,6 +175,7 @@ public class HomeActivity extends Activity
 		    	 timerTaskPlayer1 = false;
 		    	 buttonTimeUpPlayer1.setVisibility(View.VISIBLE);
 		    	 setRadioGroupEnable(answerRadioGroupPlayer1, false);
+		    	 counterTextViewPlayer1.setVisibility(View.INVISIBLE);
 		    	 answerRadioGroupPlayer1.setVisibility(View.INVISIBLE);
 		    	 totalMissedPlayer1++;
 		     }
@@ -222,6 +223,7 @@ public class HomeActivity extends Activity
 				buttonTimeUpPlayer1.setVisibility(View.GONE);
 				setRadioGroupEnable(answerRadioGroupPlayer1, true);
 				answerRadioGroupPlayer1.setVisibility(View.VISIBLE);
+				counterTextViewPlayer1.setVisibility(View.VISIBLE);
 			}
 		});
 		
@@ -263,6 +265,7 @@ public class HomeActivity extends Activity
 			    	 buttonTimeUpPlayer2.setVisibility(View.VISIBLE);
 			    	 setRadioGroupEnable(answerRadioGroupPlayer2, false);
 			    	 answerRadioGroupPlayer2.setVisibility(View.INVISIBLE);
+			    	 counterTextViewPlayer2.setVisibility(View.INVISIBLE);
 			    	 totalMissedPlayer2++;
 			     }
 			  }.start();
@@ -310,6 +313,7 @@ public class HomeActivity extends Activity
 					buttonTimeUpPlayer2.setVisibility(View.GONE);
 					setRadioGroupEnable(answerRadioGroupPlayer2, true);
 					answerRadioGroupPlayer2.setVisibility(View.VISIBLE);
+					counterTextViewPlayer2.setVisibility(View.VISIBLE);
 				}
 			});
 		}

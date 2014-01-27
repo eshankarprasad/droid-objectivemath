@@ -150,7 +150,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="a152d781f4e0f9b"
+        ads:adUnitId="a152d78d8e39a90"
         ads:loadAdOnCreate="true" >
     </com.google.ads.AdView>
 </RelativeLayout>
